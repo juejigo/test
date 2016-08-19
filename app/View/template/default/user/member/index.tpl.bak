@@ -1,0 +1,80 @@
+{include file='public/fr/header.mobile.tpl'}
+<div class="menu">
+   <a class="back" href="javascript:;" onclick="history.go(-1);"><img src="{$smarty.const.URL_WEB}webapp/images/menu_back.png"></a>
+   <div class="tit">{$headerTitle}</div>
+   <a class="out" href="/user/account/logout"><img src="{$smarty.const.URL_WEB}webapp/images/btn_out.png"></a>
+</div>
+<div class="menber">
+    <div class="m_info"><input type="button" value="编辑头像" onclick="window.location='/user/profile/edit'" class="bj_tx">
+         <div class="m_tx">
+			{if $userInfo.avatar}
+            <img src="{$userInfo.avatar}" width="100%" height="100%">
+			{else}
+            <img src="/static/style/default/webapp/images/m_tx.png" width="100%" height="100%">
+			{/if}
+         </div>
+         <div class="m_zh">
+            <p><span>
+			{if $userInfo.account}
+			{$userInfo.account}
+			{else}
+			{$userInfo.member_name}
+			{/if}
+			</span></p>
+            <p>{$userInfo.group_name}</p>
+            <p>幸运号：{$userInfo.id}</p>
+         </div>
+    </div>
+    <div class="my_order">
+        <div class="my_allorder"><a href="/order/order/list">我的订单<span>查看全部已购商品</span></a></div>
+        <div class="mo_list">
+           <ul>
+              <li><a href="/order/order/list?status=0" class="mico_fk">
+			  {if $dfk_count>0}
+			  <i class="ico_num">{$dfk_count}</i>
+			  {/if}待付款
+			  </a></li>
+              <li><a href="/order/order/list?status=1" class="mico_fh">
+			  {if $dfh_count>0}
+			  <i class="ico_num">{$dfh_count}</i>
+			  {/if}待发货			  
+			  </a></li>
+              <li><a href="/order/order/list?status=2" class="mico_sh">
+			  {if $dqr_count>0}
+			  <i class="ico_num">{$dqr_count}</i>
+			  {/if}待收货				  
+			  </a></li>
+              <li><a href="/order/order/list?status=3" class="mico_pj">
+			  {if $dpj_count>0}
+			  <i class="ico_num">{$dpj_count}</i>
+			  {/if}已完成</a></li>
+              <li><a href="/order/order/list?status=11" class="mico_tk">{if $dtk_count>0}
+			  <i class="ico_num">{$dtk_count}</i>
+			  {/if}退款</a></li>
+           </ul>
+        </div>
+    </div>
+    {if $user->role == 'seller' || $user->role == 'partner'}
+    <div class="men_list">
+		<ul>
+		  <li class="ico_qb"><a href="/user/wallet">钱包<span>提现、优惠券等</span></a></li>
+		  <li class="ico_sy"><a href="/user/funds/income">我的业绩<span>补贴、提成</span></a></li>
+		  <li class="ico_ewm"><a href="/user/member/qrcode">我的二维码<span></span></a></li>
+		</ul>
+    </div>
+    {/if}
+    <div class="men_list">
+       <ul>
+          <li class="ico_df"><a href="/orderuc/advance/list">我的代付<span></span></a></li>
+          <li class="ico_sc"><a href="/favorite/favorite">我的收藏<span></span></a></li>
+          <li class="ico_sh"><a href="/consignee/consignee/list">我的收货地址<span></span></a></li>
+          <!--<li class="ico_zh"><a href="/user/member/safety">账户安全<span></span></a></li>-->
+       </ul>
+    </div>
+    <div class="men_list">
+       <ul>
+          <li class="ico_kf"><a href="tel:4008267122">联系客服<span></span></a></li>
+       </ul>
+    </div>
+</div>
+{include file='public/fr/footer.mobile.tpl'}

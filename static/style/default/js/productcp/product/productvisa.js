@@ -1,0 +1,57 @@
+"use strict";
+var tbody=$("#tbody");
+/*
+	添加一行
+*/
+$("#addTr").click(function(){
+	var i=0,
+		str='',
+		visaTr=$("#tbody tr");
+	visaTr.each(function(k,v){
+		var dI=$(v).data("id");
+		if(i<dI) i=dI;
+	});
+	i++;
+	str+='<tr data-id="'+i+'"><td><input type="text" class="form-control" name="items['+i+'][info_name]"></td>';
+	str+='<td><input type="text" class="form-control" name="items['+i+'][info_type]"></td>';
+	str+='<td><input type="text" class="form-control" name="items['+i+'][info_total]"></td>';
+	str+='<td><textarea name="items['+i+'][info]" class="form-control"></textarea></td>';
+	str+='<td><button type="button" class="btn green upload'+i+'">上传附件 <i class="fa fa-plus"></i></button><input type="hidden" name="items['+i+'][info_file]"><a href="" class="btn blue">查看</a></td>';
+	str+='<td><button type="button" class="btn red delete">删除</button></td></tr>';
+	tbody.append($(str).hide().fadeIn(500));
+	upload(i);
+})
+/*
+	删除一行
+*/
+$(document).on('click','.delete',function(){
+	var _this=$(this).parents("tr");
+	_this.animate({opacity:0},500,function(){
+		_this.remove();
+	})
+})
+/*
+	上传附件
+*/
+function upload(i){
+	var i=(i)?i:'';
+	KindEditor.ready(function(K) {
+		var editor = K.editor({
+			allowFileManager : true,
+			uploadJson : '/productcp/visa/fileup',
+		});
+		K('.upload'+i+'').click(function() {
+			var _this=$(this).next();
+			editor.loadPlugin('insertfile', function() {
+				editor.plugin.fileDialog({
+					clickFn : function(url, title) {
+						_this.val(url);
+						_this.next().attr('href',url);
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+	});
+}
+upload();

@@ -1,0 +1,372 @@
+@bdcolor:#e0e0e0;
+@gary:#9e9e9e;
+@red:#e41919;
+@green:#3cb035;
+.blank{height: 10px;}
+.tc{text-align: center;}
+.tr{text-align: right;}
+.fl{float: left;}
+.fr{float: right;}
+.red{color:@red}
+.gary{color:@gary}
+.dis_n{display:none;}
+.bd_t{
+    &:before {
+        content: " ";
+        position: absolute;
+        left:0;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        border-top: 1px solid @bdcolor;
+        -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+}
+.bd_b{
+    &:after {
+        content: " ";
+        position: absolute;
+        left:0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px solid @bdcolor;
+        -webkit-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        -webkit-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+}
+header {
+    width: 100%;
+    margin: 0 auto;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    line-height: 50px;
+    background: #f8f8f8;
+    .bd_b;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.h50{height: 50px;}
+.right_go{
+    position: absolute;
+    height: 50px;
+    right: 15px;
+    top: 0;
+    font-size: 14px;
+    font-weight: normal;
+    color:#018aff;
+}
+section{
+    overflow: hidden;
+    display: block;
+}
+.index_img{
+  img{width:100%;}
+  a{
+    color:#fff;
+    position:absolute;
+    right: 10px;
+    top:10px;
+    text-decoration:underline;
+  }
+}
+.index_content{
+  padding:20px;
+  margin-bottom: 70px;
+  img{width:100%;margin-bottom:5px;}
+}
+
+
+.succ_box{
+
+    background: #fff;
+    text-align: center;
+    .bd_b;
+    img{
+      width: 60px;
+      height:60px;
+      margin:10px 0;
+    }
+    p{margin-bottom:10px;}
+    .ts{color:@green;}
+    .money{font-size: 26px;}
+    .sm{
+      margin:0 auto;
+      width:90%;
+      padding:10px 0;
+      position: relative;
+      .bd_t;
+      line-height: 30px;
+      color:@gary;
+    }
+}
+
+.lottery_box{
+    .lottery{
+        height:180px;
+        margin:10px 0;
+        overflow: hidden;
+        background: @green;
+    }
+    .title{
+      margin:40px 0 10px;
+    }
+    .get_before{
+        height:150px;
+        margin:15px;
+        background:url(/static/style/default/image/scrath/l-bg.png) no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        overflow: hidden;
+    }
+    .get_btn{
+        width:130px;
+        line-height:40px;
+        margin:15px auto;
+        font-size: 16px;
+        color:#fff;
+        background: #ff4200;
+        border-radius: 6px;
+        display: block;
+    }
+    .get_after{
+        height:150px;
+        margin:15px;
+        background:url(/static/style/default/image/scrath/after.png) no-repeat;
+        background-size:100% 100%;
+        opacity: 0;
+        z-index: -1;
+    }
+    .region{
+        position: relative;
+        height: 150px;
+        text-align: center;
+        overflow: hidden;
+        canvas,img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        p{}
+    }
+    .info{
+        padding:15px;
+        font-size: 12px;
+        overflow: hidden;
+        div{padding:2px 0px;}
+        span{
+            color:@red;
+            padding:0 3px;
+        }
+        .has{
+            position: relative;
+            padding-right:10px;
+            padding-left: 40px;
+            background:#e6e6e6;
+            border-radius: 4px;
+            &:after{
+                content: "";
+                position: absolute;
+                left:-2px;
+                bottom: 0;
+                width:39px;
+                height:36px;
+                background: url(/static/style/default/image/scrath/prize.png) no-repeat;
+                background-size:100% ;
+            }
+        }
+    }
+}
+.adrs_box{z-index:9}
+.zz{position:fixed; left:0; top:0; right:0; bottom:0; overflow:hidden; z-index:99;font-size:12px;background:rgba(0,0,0,.7);}
+.adrs_from{
+    position:absolute; left:20px; top:150px; right:20px;z-index:999;
+    background: #fff;
+    .title{
+        position: relative;
+        padding:15px;
+        .bd_b;
+    }
+}
+.input_view{
+    margin:10px 15px;
+    padding:8px;
+    border:1px solid @bdcolor;
+    input,textarea{width: 100%;}
+    textarea{height:50px;}
+}
+.body100{
+    padding-bottom: 100px;
+}
+.prize_list,.prize_info{
+    background: #fff;
+    li{
+        position: relative;
+        padding:15px;
+        overflow: hidden;
+        .bd_b;
+    }
+    .prize_img{
+        float: left;
+        width: 70px;
+        height: 50px;
+        img{
+            width: 70px;
+            height: 50px;
+        }
+    }
+    .info{
+        float: left;
+        margin-left: 10px;
+    }
+    p{
+        font-size: 14px;
+        color:@gary;
+    }
+    i{
+        display: block;
+        position: absolute;
+        right: 15px;
+        top:20px;
+        width: 60px;
+        height:40px;
+        background: url(/static/style/default/image/scrath/out.png) no-repeat;
+        background-size:100% 100%;
+    }
+}
+.prize_info{
+  background:#fff;
+  padding:15px;
+  .prize_img{
+      float: left;
+      width: 45px;
+      height: 45px;
+      img{
+          margin-top: 5px;
+          width: 40px;
+          height:40px;
+      }
+  }
+}
+.rule{
+  margin-top:15px;
+  padding:15px;
+  padding-bottom:0px;
+  background: #fff;
+  img{width:100%;margin-bottom: 10px;}
+
+}
+.tel_box{
+    margin: 10px 0;
+    padding: 5px 0;
+    position: relative;
+    line-height: 30px;
+    color: #869da7;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    .bd_t;
+}
+.fixed_bottom{
+  background:#fff;
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
+.weui_cells_title {
+    margin: 0.8em 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #888;
+}
+.weui_cell_ft {
+  text-align: right;
+  color: #888;
+}
+.weui_cell {
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    background: #FFF;
+    .bd_t;
+    .bd_b;
+}
+.weui_cell_hd, .weui_cell_bd, .weui_cell_ft {
+    display: table-cell;
+    vertical-align: middle;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: nowrap;
+}
+.weui_cell_primary {
+    width: 2000px;
+    white-space: normal;
+}
+//按钮
+.btn{
+    clear: both;
+    margin:15px;
+}
+.weui_btn{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    line-height: 2.33333333;
+    border-radius: 4px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    z-index: 10;
+}
+.weui_btn_disabled {
+    color: rgba(255, 255, 255, 0.6);
+}
+.weui_btn_primary {
+    background-color: @green;
+}
+.weui_btn_gray{
+    background-color:#b0b0b0;
+}
+/*底部*/
+footer{
+    position: fixed;
+    bottom: 0;
+    width:96%;
+    padding:15px 2%;
+    z-index: 88;
+    text-align: center;
+    background: #f2f2f2;
+
+    .title{
+        font-size: 16px;
+        color:#018aff;
+        background: url(/static/style/default/image/scrath/b.gif) center repeat-x;
+        span{
+            padding:0 10px;
+            background:#f2f2f2;
+        }
+    }
+    p{
+        color:@gary;
+        font-size: 12px;
+    }
+}

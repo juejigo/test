@@ -1,0 +1,19 @@
+.nav_fixed_two{
+  z-index: 9990;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0;
+  border: 0px;
+  box-shadow: none;
+  overflow: hidden;
+  filter: none;
+  background: #fff;
+  right: 0;
+  left: 0;
+  top:46px;
+  border-bottom: 1px solid #ddd;
+}
+
+.page-header-fixed .page-container {
+  margin-top:0;
+}

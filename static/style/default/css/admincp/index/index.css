@@ -1,0 +1,39 @@
+/* header */
+#header
+{height:80px;border-bottom:8px solid rgb(35,150,124);}
+#logo
+{float:left;background-color:rgb(45,179,152);width:233px;text-align:center;}
+#banner
+{height:50px;line-height:50px;padding:15px 50px;margin-left:233px;}
+#banner #text a
+{display:inline-block;padding:5px 10px;font-size:14px;}
+#text span
+{font-family:"黑体";}
+#text #xiaozhi
+{font-size:22px;}
+#text #welcome
+{font-size:14px;}
+.icon
+{height:50px;line-height:50px;}
+.icon img
+{margin-top:15px;}
+.icon.seperator
+{display:inline-block;padding-right:30px;background:url("../../../image/public/header-sx.png") no-repeat scroll 80% bottom rgba(0, 0, 0, 0);}
+
+/* left */
+#left-uc
+{width:233px;background-color:#000;}
+#left-uc a
+{color:#fff;background-color:#000;display:block;padding:10px 0 10px 50px;width:183px;text-decoration:none;font-size:14px;}
+#left-uc a.dt
+{background-color:#000;}
+#left-uc a.dl
+{background-color:rgb(40,48,61);}
+#left-uc a.selected
+{background-color:rgb(230,95,73);}
+#home
+{background:url("../../../image/public/overview.png") no-repeat 20px center transparent;}
+.up
+{background:url("../../../image/public/up.png") no-repeat 20px center transparent;}
+.down
+{background:url("../../../image/public/down.png") no-repeat 20px center transparent;}

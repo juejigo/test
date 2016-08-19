@@ -1,0 +1,80 @@
+{include file='public/admincp/header.tpl'}{include file="public/admincp/siderbar.tpl"}
+
+
+<!--content-wrapper-->
+	<div class="page-content-wrapper">
+		<div class="page-content" style="min-height:812px">
+			<!--标题栏-->
+			<h3 class="page-title">添加合同 <small>添加一个新的合同</small></h3>
+			<!--路径导航-->
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li><i class="fa fa-home"></i><a href="#">首页</a><i class="fa fa-angle-right"></i></li>
+					<li><a href="#">商品</a><i class="fa fa-angle-right"></i></li>
+					<li><a href="#">合同列表</a><i class="fa fa-angle-right"></i></li>
+					<li><a href="#">添加合同</a></li>
+				</ul>
+			</div>
+			<!--表单-->
+			<div class="row">
+				<div class="col-md-12">
+					<form action="/contractcp/contract/add" class="form-horizontal form-row-seperated" method="post">
+						<div class="portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="fa fa-edit"></i>内容设置
+								</div>
+								<div class="pull-right">
+									<a href="/contractcp/contract/list" class="btn default"><i class="fa fa-angle-left"></i> 返回</a>
+									<button type="reset" class="btn default"><i class="fa fa-refresh"></i> 重置</button>
+									<button type="submit" class="btn green"><i class="fa fa-check-circle"></i> 保存</button>
+								</div>
+							</div>
+						</div>
+						<div class="portlet-body form">
+							<div class="tab-content">
+								<div class="form-body">
+									<div class="form-group">
+										<label class="control-label col-md-2">合同名称： </label>
+										<div class="col-md-8"><input type="text" class="form-control" name="contract_name"></div>
+									</div>
+									<div class="form-group">
+	                                    <label class="col-md-2 control-label">合同条例：</label>
+	                                    <div class="col-md-8">
+	                                        <textarea class="form-control ke" name="content"></textarea>
+	                                    </div>
+	                                </div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--表单 /-->
+		</div>
+	</div>
+	<!--content-wrapper /-->
+	
+{include file='public/admincp/footer.tpl'}
+
+<script src="{$smarty.const.URL_JS}lib/kindeditor/kindeditor-all-min.js"></script>
+<script src="{$smarty.const.URL_JS}lib/kindeditor/lang/zh_CN.js"></script>
+<script>
+$(function() {    
+    Metronic.init(); // init metronic core components
+	Layout.init(); // init current layout
+	QuickSidebar.init(); // init quick sidebar
+	Demo.init(); // init demo features
+	//富文本绑定初始化
+    KindEditor.ready(function(K) {
+	    window.editor = K.create('.ke',{
+	        uploadJson:'/imageuc/kindeditor/upload?',
+	        resizeType :1,
+	        width:'100%',
+	        height:'500px',
+	        allowPreviewEmoticons : true,
+	        allowImageUpload : true,
+	    });	
+	});
+});
+</script>
